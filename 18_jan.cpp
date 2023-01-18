@@ -50,11 +50,8 @@ int main(){
 	vector<int> states;
 	vector<vector<int> > mat(mm, vector<int>(mm, -1));
 	if(fio.is_open()){
-		// cout << "open\n";
 		while(fio){
 			getline(fio, line);
-
-			// cout << line << endl;
 			if(i==0){
 				q0 = stoi(line);
 				cout << q0 << endl;;
@@ -82,22 +79,11 @@ int main(){
 	}
 	cout<<"\n\n";
 
-	// for(int i=0; i<10; i++){
-	// 	for(int j=0; j<10; j++){
-	// 		cout << mat[i][j] << "  ";
-	// 	}
-	// 	cout << "\n";
-	// }
-
 	string input;
 	cout << "\n Enter the input string : ";
 	cin>>input;
 
 	vector<int> inn = convertt(input);
-
-	// for(int i=0; i<inn.size(); i++){
-	// 	cout << inn[i] <<"  ";
-	// }
 
 	int j=0, curr = q0;
 	while(j<inn.size() && curr != -1){
