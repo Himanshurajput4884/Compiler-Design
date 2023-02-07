@@ -5,25 +5,6 @@
 #define mm 100
 using namespace std;
 
-int stoi(string s){
-	int res = 0;
-	bool is_neg = false;
-	int i=0;
-	if(s[0]=='-'){
-		is_neg = true;
-		i=1;
-	}
-	while(i<s.size()){
-		res = res*10 + (s[i]-'0');
-		i++;
-	}
-	if(is_neg){
-		res = -res;
-	}
-	return res;
-}
-
-
 vector<int> convertt(string s){
 	vector<int> res;
 	int i=0;
@@ -81,7 +62,7 @@ int main(){
 
 	string input;
 	cout << "\n Enter the input string : ";
-	cin>>input;
+	getline(cin, input);
 
 	vector<int> inn = convertt(input);
 
