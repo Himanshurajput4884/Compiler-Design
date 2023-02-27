@@ -8,14 +8,15 @@ int main()
 {
     ifstream fio;
     string line;
-    fio.open("dfa.txt");
-    int i = 0, q0;
+    fio.open("mealy.txt");
+    unsigned int i = 0, q0;
     vector<vector<pp>> mat(mm, vector<pp>(mm, {-1, '*'}));
     if (fio.is_open())
     {
         while (fio)
         {
             getline(fio, line);
+            cout << line << "\n";
             if (i == 0)
             {
                 q0 = stoi(line);
@@ -23,7 +24,7 @@ int main()
             else
             {
                 int index = i - 1;
-                int j = 0, k = 0;
+                unsigned int j = 0, k = 0;
                 while (j < line.size())
                 {
                     string temp = "";
@@ -72,14 +73,7 @@ int main()
         i++;
     }
 
-    if (curr == -1)
-    {
-        cout << "Invalid Input\n";
-    }
-    else
-    {
-        cout << " Result : " << res << endl;
-    }
+    cout << "\n Result: " << res << endl;
     fio.close();
     return 0;
 }

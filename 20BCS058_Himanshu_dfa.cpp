@@ -35,31 +35,20 @@ int main(){
 			getline(fio, line);
 			if(i==0){
 				q0 = stoi(line);
-				cout << q0 << endl;;
 			}
 			else if(i==1){
 				states = convertt(line);
-				for(int k=0; k<states.size(); k++){
-					cout << states[k] << " "; 
-				} 
-				cout<<"\n";
-			}
+							}
 			else{
 				int index = i-2;
 				vector<int> temp = convertt(line);
 				for(int j=0; j<temp.size(); j++){
 					mat[index][j] = temp[j];
 				}
-				for(int k=0; k<temp.size(); k++){
-					cout << temp[k] << " "; 
-				}
-				cout << "\n";
 			}
 			i++;	
 		}
 	}
-	cout<<"\n\n";
-
 	string input;
 	cout << "\n Enter the input string : ";
 	getline(cin, input);
@@ -71,8 +60,15 @@ int main(){
 		curr = mat[curr][inn[j]];
 		j++;
 	}
+	bool is_true = false;
+	for(auto a : states){
+		if(curr == a){
+			is_true = true;
+			break;
+		}
+	}
 
-	if(curr == -1 || j<inn.size()){
+	if((curr == -1 || j<inn.size()) || !is_true){
 		cout << "Not accepted\n";
 	}
 	else{
